@@ -17,12 +17,12 @@ public class Sorting {
       try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
          Statement stmt = conn.createStatement();) {		      
          System.out.println("Fetching records in ascending order...");
-         ResultSet rs = stmt.executeQuery(QUERY + " ORDER BY first ASC");
+         ResultSet rs = stmt.executeQuery(QUERY + " ORDER BY student_score ASC");
          while(rs.next()){
             //Display values
-            System.out.print("student_id: " + rs.getInt("student_id"));
-            System.out.print("student_name: " + rs.getString("student_name"));
-            System.out.print("student_score: " + rs.getString("student_score"));
+            System.out.print("id: " + rs.getInt("student_id"));
+            System.out.print("name: " + rs.getString("student_name"));
+            System.out.print("score: " + rs.getString("student_score"));
             
          }
 
